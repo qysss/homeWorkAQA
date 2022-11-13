@@ -4,23 +4,18 @@ import org.junit.jupiter.api.Test;
 import test.Base;
 import test.Objects;
 
-
 public class HomeWork {
 
     @BeforeAll
-    public static void setupForBrowser(){
+    public static void setupForBrowser() {
         Base.setUp();
     }
 
-
     @BeforeEach
-    public void OpenAndDeleteBannerFromFooter(){
+    public void OpenAndDeleteBannerFromFooter() {
         Base.openURL("https://demoqa.com/automation-practice-form");
         Base.runJavaScript();
-
-        
     }
-
 
     @Test
     void fillingFieldsAndClickingOnSambit() {
