@@ -1,37 +1,34 @@
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import test.base;
-import test.objects;
-
-import static com.codeborne.selenide.Selenide.executeJavaScript;
+import test.Base;
+import test.Objects;
 
 
-public class homework {
+public class HomeWork {
 
     @BeforeAll
-    static void setUp() {
-        Configuration.browserSize = "1920x1080";
+    public static void setupForBrowser(){
+        Base.setUp();
     }
 
+
     @BeforeEach
-    void runJavaScript() {
-        base.openURL("https://demoqa.com/automation-practice-form");
-        executeJavaScript("$('footer').remove()");
-        executeJavaScript("$('#fixedban').remove()");
+    public void deleteBannerFromFuter(){
+        Base.runJavaScript();
     }
+
 
     @Test
     void fillingFieldsAndClickingOnSambit() {
-        objects.enterValueInFirstName("Andrei")
+        Objects.enterValueInFirstName("Andrei")
                 .enterValueInLastName("Papruha")
                 .enterValueInUserEmail("andreipopruha@gmail.com")
-                .chooseGender()
+                .chooseGender("Male")
                 .enterValueInUserNumber("37525252525")
                 .enterValueIndateOfBirthInput()
                 .enterValueInSubjectsContainer("Art")
-                .enterValueInCustomControlLabel()
+                .enterValueInCustomControlLabel("Sports")
                 .enterValueInuploadPicture()
                 .enterValueIncurrentAddress("Test for qu.guru")
                 .enterValueInstate("Haryana")
