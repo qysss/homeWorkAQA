@@ -18,7 +18,6 @@ public class Base {
     }
 
     public static void runJavaScript() {
-        Base.openURL("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }

@@ -14,8 +14,11 @@ public class HomeWork {
 
 
     @BeforeEach
-    public void deleteBannerFromFuter(){
+    public void OpenAndClearBannerFromFooter(){
+        Base.openURL("https://demoqa.com/automation-practice-form");
         Base.runJavaScript();
+
+        
     }
 
 
