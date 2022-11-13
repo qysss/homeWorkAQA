@@ -1,10 +1,10 @@
 package test;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -96,10 +96,24 @@ public class Objects extends Base {
         return null;
     }
 
-    public static Objects compareValue(String value) {
-        modalСontent.shouldHave(Condition.text(value));
+    public static Objects checkingTableHasAppeared(String value) {
+        modalСontent.shouldHave(text(value));
         return null;
     }
+
+    public static Objects compareValue() {
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".table-responsive tr:nth-child(1)>td:nth-child(2)").shouldHave(text(Variables.getFirsName() + " " + Variables.getLastName()));
+        $(".table-responsive tr:nth-child(2)>td:nth-child(2)").shouldHave(text(Variables.getEmail()));
+        $(".table-responsive tr:nth-child(3)>td:nth-child(2)").shouldHave(text(Variables.getGender()));
+        $(".table-responsive tr:nth-child(4)>td:nth-child(2)").shouldHave(text(Variables.getNumberPhone()));
+        $(".table-responsive tr:nth-child(6)>td:nth-child(2)").shouldHave(text(Variables.getSubjects()));
+        $(".table-responsive tr:nth-child(7)>td:nth-child(2)").shouldHave(text(Variables.getHobbies()));
+        $(".table-responsive tr:nth-child(9)>td:nth-child(2)").shouldHave(text(Variables.getAddress()));
+        $(".table-responsive tr:nth-child(10)>td:nth-child(2)").shouldHave(text(Variables.getState() + " " + Variables.getCity()));
+        return null;
+    }
+
 
 
 
