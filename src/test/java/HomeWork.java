@@ -22,7 +22,7 @@ public class HomeWork {
     }
 
     @Test
-    void fillingFieldsAndClickingOnSambit() {
+    void CheckingForDataEntryAndComparingThemInTable() {
         Objects.enterValueInFirstName(Variables.getFirsName())
                 .enterValueInLastName(Variables.getLastName())
                 .enterValueInUserEmail(Variables.getEmail())
