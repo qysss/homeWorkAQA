@@ -32,7 +32,7 @@ public class RegistrationFormTest extends TestBase {
         registrationResultsModal
                 .verifyModalAppears();
     }
-asd
+
     @Test
     void checkingValuesInRegistrationForm() {
         registrationResultsModal
