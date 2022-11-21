@@ -3,3 +3,5 @@
 \build
 *.log
 *.class
+/gradlew
+/gradlew.bat
