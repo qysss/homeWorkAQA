@@ -1,13 +1,13 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import constants.TestData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import constants.TestData;
 
 public class HomeWork extends TestBase {
-    //String FirstName =
+
 
     @BeforeAll
     public static void setupForBrowser() {

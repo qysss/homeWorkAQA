@@ -12,19 +12,19 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class RegistrationPage {
     private final SelenideElement firstName = $("#firstName");
-   private final SelenideElement lastName = $("#lastName");
-   private final SelenideElement userEmail = $("#userEmail");
-   private final SelenideElement genderRadio = $("#genterWrapper");
-   private final SelenideElement userNumber = $("#userNumber");
-   private final SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
-   private final SelenideElement subjectsContainer = $("#subjectsInput");
-   private final SelenideElement customControlLabel = $("#hobbiesWrapper");
-   private final SelenideElement uploadPicture = $("#uploadPicture");
-   private final SelenideElement currentAddress = $("#currentAddress");
-   private final SelenideElement state = $("#state");
-   private final SelenideElement city = $("#city");
-   private final SelenideElement modalContent = $(".modal-content");
-   private final SelenideElement buttonSummit = $(".btn-primary");
+    private final SelenideElement lastName = $("#lastName");
+    private final SelenideElement userEmail = $("#userEmail");
+    private final SelenideElement genderRadio = $("#genterWrapper");
+    private final SelenideElement userNumber = $("#userNumber");
+    private final SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
+    private final SelenideElement subjectsContainer = $("#subjectsInput");
+    private final SelenideElement customControlLabel = $("#hobbiesWrapper");
+    private final SelenideElement uploadPicture = $("#uploadPicture");
+    private final SelenideElement currentAddress = $("#currentAddress");
+    private final SelenideElement state = $("#state");
+    private final SelenideElement city = $("#city");
+    private final SelenideElement modalContent = $(".modal-content");
+    private final SelenideElement buttonSummit = $(".btn-primary");
 
     public RegistrationPage enterValueInFirstName(String firstNameValue) {
         firstName.setValue(firstNameValue);
