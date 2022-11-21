@@ -1,19 +1,10 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import constants.TestData;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class HomeWork extends TestBase {
-
-
-    @BeforeAll
-    public static void setupForBrowser() {
-        TestBase.setUp();
-        Configuration.holdBrowserOpen = true;
-    }
 
     @BeforeEach
     public void OpenAndDeleteBannerFromFooter() {
@@ -36,11 +27,11 @@ public class HomeWork extends TestBase {
                 .enterValueIncurrentAddress(TestData.getAddress())
                 .enterValueInstate(TestData.getState())
                 .enterValueIncity(TestData.getCity())
-                .enterButton()
+                .enterButton();
+        registrationResultsModal
+                .verifyModalAppears();
+        // .compareValue();
 
-                .checkingTableHasAppeared("Thanks for submitting the form")
-
-                .compareValue();
 
     }
 }
