@@ -9,8 +9,11 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
+
+
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
+
     @BeforeAll
     public static void setupForBrowser() {
         TestBase.setUp();
