@@ -1,11 +1,9 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import constants.TestData;
 
 import java.io.File;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -23,7 +21,6 @@ public class RegistrationPage {
     private final SelenideElement currentAddress = $("#currentAddress");
     private final SelenideElement state = $("#state");
     private final SelenideElement city = $("#city");
-    private final SelenideElement modalContent = $(".modal-content");
     private final SelenideElement buttonSummit = $(".btn-primary");
 
     public RegistrationPage enterValueInFirstName(String firstNameValue) {
@@ -93,28 +90,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage enterButton() {
+    public void enterButton() {
         buttonSummit.click();
-        return this;
+        //return this;
     }
-
-    public RegistrationPage checkingTableHasAppeared(String value) {
-        modalContent.shouldHave(text(value));
-        return this;
-    }
-
-    public RegistrationPage compareValue() {
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive tr:nth-child(1)>td:nth-child(2)").shouldHave(text(TestData.getFirstName() + " " + TestData.getLastName()));
-        $(".table-responsive tr:nth-child(2)>td:nth-child(2)").shouldHave(text(TestData.getEmail()));
-        $(".table-responsive tr:nth-child(3)>td:nth-child(2)").shouldHave(text(TestData.getGender()));
-        $(".table-responsive tr:nth-child(4)>td:nth-child(2)").shouldHave(text(TestData.getNumberPhone()));
-        $(".table-responsive tr:nth-child(6)>td:nth-child(2)").shouldHave(text(TestData.getSubjects()));
-        $(".table-responsive tr:nth-child(7)>td:nth-child(2)").shouldHave(text(TestData.getHobbies()));
-        $(".table-responsive tr:nth-child(9)>td:nth-child(2)").shouldHave(text(TestData.getAddress()));
-        $(".table-responsive tr:nth-child(10)>td:nth-child(2)").shouldHave(text(TestData.getState() + " " + TestData.getCity()));
-        return this;
-    }
-
-
 }
