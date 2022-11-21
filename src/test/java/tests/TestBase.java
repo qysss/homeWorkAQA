@@ -17,7 +17,7 @@ public class TestBase {
     @BeforeAll
     public static void setupForBrowser() {
         TestBase.setUp();
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
     }
 
     public static void openURL(String URL) {
