@@ -11,16 +11,17 @@ public class RegistrationFormTest extends TestBase {
     public void OpenAndDeleteBannerFromFooter() {
         TestBase.openURL("https://demoqa.com/automation-practice-form");
         TestBase.runJavaScript();
+        calendarComponent
+                .setDate("09", "February", "1996");
         registrationPage
                 .enterValueInFirstName(TestData.getFirstName())
                 .enterValueInLastName(TestData.getLastName())
                 .enterValueInUserEmail(TestData.getEmail())
                 .chooseGender(TestData.getGender())
                 .enterValueInUserNumber(TestData.getNumberPhone())
-                .enterValueIndateOfBirthInput()
                 .enterValueInSubjectsContainer(TestData.getSubjects())
                 .enterValueInCustomControlLabel(TestData.getHobbies())
-                .enterValueInuploadPicture()
+                .enterValueInuploadPicture("src/test/resources/forHomeWork.jpeg")
                 .enterValueIncurrentAddress(TestData.getAddress())
                 .enterValueInstate(TestData.getState())
                 .enterValueIncity(TestData.getCity())

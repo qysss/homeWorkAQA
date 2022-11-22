@@ -6,7 +6,6 @@ import java.io.File;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
 
 public class RegistrationPage {
     private final SelenideElement firstName = $("#firstName");
@@ -14,7 +13,6 @@ public class RegistrationPage {
     private final SelenideElement userEmail = $("#userEmail");
     private final SelenideElement genderRadio = $("#genterWrapper");
     private final SelenideElement userNumber = $("#userNumber");
-    private final SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
     private final SelenideElement subjectsContainer = $("#subjectsInput");
     private final SelenideElement customControlLabel = $("#hobbiesWrapper");
     private final SelenideElement uploadPicture = $("#uploadPicture");
@@ -48,13 +46,6 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage enterValueIndateOfBirthInput() {
-        dateOfBirthInput.click();
-        $(".react-datepicker__month-select").selectOption("February");
-        $(".react-datepicker__year-select").selectOption("1996");
-        $x("//div[.='9']").click();
-        return this;
-    }
 
     public RegistrationPage enterValueInSubjectsContainer(String subjectsContainerValue) {
         subjectsContainer.click();
@@ -68,8 +59,8 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage enterValueInuploadPicture() {
-        uploadPicture.uploadFile(new File("src/test/resources/forHomeWork.jpeg"));
+    public RegistrationPage enterValueInuploadPicture(String pathFile) {
+        uploadPicture.uploadFile(new File(pathFile));
         return this;
     }
 
