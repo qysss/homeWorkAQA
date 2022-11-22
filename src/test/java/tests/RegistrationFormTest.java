@@ -8,7 +8,7 @@ public class RegistrationFormTest extends TestBase {
 
 
     @BeforeEach
-    public void OpenAndDeleteBannerFromFooter() {
+    public void openAndDeleteBannerFromFooter() {
         TestBase.openURL("https://demoqa.com/automation-practice-form");
         TestBase.runJavaScript();
         calendarComponent
