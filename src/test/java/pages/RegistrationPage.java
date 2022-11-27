@@ -9,11 +9,9 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationPage {
-    CalendarComponent calendarComponent = new CalendarComponent();
     private final SelenideElement firstName = $("#firstName");
     private final SelenideElement lastName = $("#lastName");
     private final SelenideElement userEmail = $("#userEmail");
-
     private final SelenideElement birthDate = $("#dateOfBirthInput");
     private final SelenideElement genderRadio = $("#genterWrapper");
     private final SelenideElement userNumber = $("#userNumber");
@@ -24,6 +22,7 @@ public class RegistrationPage {
     private final SelenideElement state = $("#state");
     private final SelenideElement city = $("#city");
     private final SelenideElement buttonSummit = $(".btn-primary");
+    CalendarComponent calendarComponent = new CalendarComponent();
 
     public RegistrationPage enterValueInFirstName(String firstNameValue) {
         firstName.setValue(firstNameValue);
