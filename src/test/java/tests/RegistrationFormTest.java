@@ -1,21 +1,15 @@
 package tests;
 
-import constants.TestData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
-import pages.components.RegistrationResultsModal;
 
 
 public class RegistrationFormTest extends TestBase {
-    TestData testData = new TestData();
-    RegistrationPage registrationPage = new RegistrationPage();
-    RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
 
     @BeforeEach
     public void openAndDeleteBannerFromFooter() {
         TestBase.openURL("https://demoqa.com/automation-practice-form");
-        TestBase.runJavaScript();
+        TestBase.runJavaScriptToRemoveFooter();
         registrationPage
                 .enterValueInFirstName(testData.firstName)
                 .enterValueInLastName(testData.lastName)

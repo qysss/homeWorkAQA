@@ -1,7 +1,7 @@
-package constants;
+package data;
 
 
-import static constants.TestDataGenerator.*;
+import static data.TestDataGenerator.*;
 
 public class TestData {
     public String

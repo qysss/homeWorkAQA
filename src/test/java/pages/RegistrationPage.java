@@ -3,7 +3,6 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
-
 import java.io.File;
 
 import static com.codeborne.selenide.Selectors.byText;
