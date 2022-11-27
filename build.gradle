@@ -13,15 +13,16 @@ def selenideVersion = '6.9.0',
 dependencies {
 
     testImplementation('org.aspectj:aspectjweaver:1.9.9.1',
-        "com.codeborne:selenide:$selenideVersion",
-        'io.rest-assured:rest-assured:5.2.0',
-        "org.aeonbits.owner:owner:1.0.12",
-        "com.github.javafaker:javafaker:1.0.2",
-        'org.assertj:assertj-core:3.23.1',
-        'com.google.code.gson:gson:2.10',
-        'com.opencsv:opencsv:5.7.1',
-        "org.junit.jupiter:junit-jupiter:$junitVersion",
-        'org.slf4j:slf4j-simple:2.0.3')
+            'com.github.javafaker:javafaker:1.0.2',
+            "com.codeborne:selenide:$selenideVersion",
+            'io.rest-assured:rest-assured:5.2.0',
+            "org.aeonbits.owner:owner:1.0.12",
+            "com.github.javafaker:javafaker:1.0.2",
+            'org.assertj:assertj-core:3.23.1',
+            'com.google.code.gson:gson:2.10',
+            'com.opencsv:opencsv:5.7.1',
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            'org.slf4j:slf4j-simple:2.0.3')
 
 }
 

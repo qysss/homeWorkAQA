@@ -1,6 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
+
 
 import java.io.File;
 
@@ -8,9 +10,12 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationPage {
+    CalendarComponent calendarComponent = new CalendarComponent();
     private final SelenideElement firstName = $("#firstName");
     private final SelenideElement lastName = $("#lastName");
     private final SelenideElement userEmail = $("#userEmail");
+
+    private final SelenideElement birthDate = $("#dateOfBirthInput");
     private final SelenideElement genderRadio = $("#genterWrapper");
     private final SelenideElement userNumber = $("#userNumber");
     private final SelenideElement subjectsContainer = $("#subjectsInput");
@@ -46,6 +51,11 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage enterBirthDate(String day, String month, String year) {
+        birthDate.click();
+        calendarComponent.setDate(day, month, year);
+        return this;
+    }
 
     public RegistrationPage enterValueInSubjectsContainer(String subjectsContainerValue) {
         subjectsContainer.click();
@@ -55,12 +65,12 @@ public class RegistrationPage {
 
     public RegistrationPage enterValueInCustomControlLabel(String hobbies) {
         customControlLabel.$(byText(hobbies)).click();
-        ;
         return this;
     }
 
     public RegistrationPage enterValueInuploadPicture(String pathFile) {
-        uploadPicture.uploadFile(new File(pathFile));
+        String roadFile = "src/test/resources/";
+        uploadPicture.uploadFile(new File(roadFile + pathFile));
         return this;
     }
 
@@ -69,13 +79,13 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage enterValueInstate(String stateValue) {
+    public RegistrationPage enterValueInState(String stateValue) {
         state.click();
         $("#stateCity-wrapper").$(byText(stateValue)).click();
         return this;
     }
 
-    public RegistrationPage enterValueIncity(String cityValue) {
+    public RegistrationPage enterValueInCity(String cityValue) {
         city.click();
         $("[id=stateCity-wrapper]").$(byText(cityValue)).click();
         return this;
@@ -83,6 +93,5 @@ public class RegistrationPage {
 
     public void enterButton() {
         buttonSummit.click();
-        //return this;
     }
 }

@@ -3,28 +3,32 @@ package tests;
 import constants.TestData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPage;
+import pages.components.RegistrationResultsModal;
+
 
 public class RegistrationFormTest extends TestBase {
-
+    TestData testData = new TestData();
+    RegistrationPage registrationPage = new RegistrationPage();
+    RegistrationResultsModal registrationResultsModal = new RegistrationResultsModal();
 
     @BeforeEach
     public void openAndDeleteBannerFromFooter() {
         TestBase.openURL("https://demoqa.com/automation-practice-form");
         TestBase.runJavaScript();
-        calendarComponent
-                .setDate("09", "February", "1996");
         registrationPage
-                .enterValueInFirstName(TestData.getFirstName())
-                .enterValueInLastName(TestData.getLastName())
-                .enterValueInUserEmail(TestData.getEmail())
-                .chooseGender(TestData.getGender())
-                .enterValueInUserNumber(TestData.getNumberPhone())
-                .enterValueInSubjectsContainer(TestData.getSubjects())
-                .enterValueInCustomControlLabel(TestData.getHobbies())
-                .enterValueInuploadPicture("src/test/resources/forHomeWork.jpeg")
-                .enterValueIncurrentAddress(TestData.getAddress())
-                .enterValueInstate(TestData.getState())
-                .enterValueIncity(TestData.getCity())
+                .enterValueInFirstName(testData.firstName)
+                .enterValueInLastName(testData.lastName)
+                .enterValueInUserEmail(testData.email)
+                .enterBirthDate(testData.dateBirthDay, testData.dateBirthMonth, testData.dateBirthYear)
+                .chooseGender(testData.gender)
+                .enterValueInUserNumber(testData.mobile)
+                .enterValueInSubjectsContainer(testData.subjects)
+                .enterValueInCustomControlLabel(testData.hobbies)
+                .enterValueInuploadPicture(testData.picture)
+                .enterValueIncurrentAddress(testData.address)
+                .enterValueInState(testData.state)
+                .enterValueInCity(testData.city)
                 .enterButton();
     }
 
@@ -37,15 +41,15 @@ public class RegistrationFormTest extends TestBase {
     @Test
     void checkingValuesInRegistrationForm() {
         registrationResultsModal
-                .verifyResult("Student Name", TestData.getFirstName() + " " + TestData.getLastName())
-                .verifyResult("Student Email", TestData.getEmail())
-                .verifyResult("Gender", TestData.getGender())
-                .verifyResult("Mobile", TestData.getNumberPhone())
-                .verifyResult("Date of Birth", "09 February,1996")
-                .verifyResult("Subjects", TestData.getSubjects())
-                .verifyResult("Hobbies", TestData.getHobbies())
-                .verifyResult("Picture", "forHomeWork.jpeg")
-                .verifyResult("Address", TestData.getAddress())
-                .verifyResult("State and City", TestData.getState() + " " + TestData.getCity());
+                .verifyResult("Student Name", testData.firstName + " " + testData.lastName)
+                .verifyResult("Student Email", testData.email)
+                .verifyResult("Gender", testData.gender)
+                .verifyResult("Mobile", testData.mobile)
+                .verifyResult("Date of Birth", testData.dateBirthDay + " " + testData.dateBirthMonth + "," + testData.dateBirthYear)
+                .verifyResult("Subjects", testData.subjects)
+                .verifyResult("Hobbies", testData.hobbies)
+                .verifyResult("Picture", testData.picture)
+                .verifyResult("Address", testData.address)
+                .verifyResult("State and City", testData.state + " " + testData.city);
     }
 }
