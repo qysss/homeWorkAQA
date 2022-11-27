@@ -9,33 +9,33 @@ import java.util.Map;
 import java.util.Random;
 
 public class TestDataGenerator {
-    static Faker faker = new Faker();
-    static Random random = new Random();
+     Faker faker = new Faker();
+     Random random = new Random();
 
-    static SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
-    public static String[] birthDay = dateFormat.format(faker.date().birthday()).split(" ");
+     SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
+    public  String[] birthDay = dateFormat.format(faker.date().birthday()).split(" ");
 
-    public static String getFirstName() {
+    public  String getFirstName() {
         return faker.name().firstName();
     }
 
-    public static String getLastName() {
+    public  String getLastName() {
         return faker.name().lastName();
     }
 
-    public static String getEmail() {
+    public  String getEmail() {
         return faker.internet().emailAddress("kaseya.com");
     }
 
-    public static String getNumberPhone(int length) {
+    public  String getNumberPhone(int length) {
         return faker.phoneNumber().subscriberNumber(length);
     }
 
-    public static String getAddress() {
+    public  String getAddress() {
         return faker.address().fullAddress();
     }
 
-    public static String getGender() {
+    public  String getGender() {
         String[] arrayGenders = {
                 "Male",
                 "Female",
@@ -44,7 +44,7 @@ public class TestDataGenerator {
         return arrayGenders[random.nextInt(arrayGenders.length)];
     }
 
-    public static String getSubject() {
+    public  String getSubject() {
         String[] arraySubjects = {
                 "Maths",
                 "Accounting",
@@ -64,7 +64,7 @@ public class TestDataGenerator {
         return arraySubjects[random.nextInt(arraySubjects.length)];
     }
 
-    public static String getHobbies() {
+    public  String getHobbies() {
         String[] arrayHobbies = {
                 "Sports",
                 "Reading",
@@ -73,7 +73,7 @@ public class TestDataGenerator {
         return arrayHobbies[random.nextInt(arrayHobbies.length)];
     }
 
-    public static String getPicture() {
+    public  String getPicture() {
         String[] arrayPicture = {
                 "test1.jpeg",
                 "test2.jpeg"
@@ -81,7 +81,7 @@ public class TestDataGenerator {
         return arrayPicture[random.nextInt(arrayPicture.length)];
     }
 
-    public static String getState() {
+    public  String getState() {
         String[] arrayStates = {
                 "NCR",
                 "Uttar Pradesh",
@@ -91,7 +91,7 @@ public class TestDataGenerator {
         return arrayStates[random.nextInt(arrayStates.length)];
     }
 
-    public static String getCity(String key) {
+    public  String getCity(String key) {
         Map<String, String[]> mapStateCity = new HashMap<>();
         mapStateCity.put("NCR", new String[]{"Delhi", "Gurgaon", "Noida"});
         mapStateCity.put("Uttar Pradesh", new String[]{"Agra", "Lucknow", "Merrut"});

@@ -1,9 +1,8 @@
 package data;
 
 
-import static data.TestDataGenerator.*;
-
 public class TestData {
+    TestDataGenerator testDataGenerator = new TestDataGenerator();
     public String
             firstName,
             lastName,
@@ -21,19 +20,19 @@ public class TestData {
             dateBirthYear;
 
     public TestData() {
-        this.firstName = getFirstName();
-        this.lastName = getLastName();
-        this.email = getEmail();
-        this.gender = getGender();
-        this.mobile = getNumberPhone(10);
-        this.subjects = getSubject();
-        this.hobbies = getHobbies();
-        this.picture = getPicture();
-        this.address = getAddress();
-        this.state = getState();
-        this.city = getCity(state);
-        this.dateBirthDay = birthDay[0];
-        this.dateBirthMonth = birthDay[1];
-        this.dateBirthYear = birthDay[2];
+        this.firstName = testDataGenerator.getFirstName();
+        this.lastName = testDataGenerator.getLastName();
+        this.email = testDataGenerator.getEmail();
+        this.gender = testDataGenerator.getGender();
+        this.mobile = testDataGenerator.getNumberPhone(10);
+        this.subjects = testDataGenerator.getSubject();
+        this.hobbies = testDataGenerator.getHobbies();
+        this.picture = testDataGenerator.getPicture();
+        this.address = testDataGenerator.getAddress();
+        this.state = testDataGenerator.getState();
+        this.city = testDataGenerator.getCity(state);
+        this.dateBirthDay = testDataGenerator.birthDay[0];
+        this.dateBirthMonth = testDataGenerator.birthDay[1];
+        this.dateBirthYear = testDataGenerator.birthDay[2];
     }
 }
